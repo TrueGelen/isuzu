@@ -114,7 +114,7 @@ body, div, h1, h2, h3, h4, p, input {
 
 	//---header----
 	.header{
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
     position: relative;		
     background: url(../img/header__bg.png);
     background-size: cover;
@@ -173,7 +173,7 @@ body, div, h1, h2, h3, h4, p, input {
 
     &__content{
       position: relative;
-      border: 1px solid white;
+      // border: 1px solid white;
       // max-width: 1220px;
       width: 100%;
       margin: 0 auto;
@@ -188,7 +188,7 @@ body, div, h1, h2, h3, h4, p, input {
     }
     
     &__right{
-      border: 1px solid blue;
+      // border: 1px solid blue;
       position: relative;
       display: inline-block;
       text-align: center;
