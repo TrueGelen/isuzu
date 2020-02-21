@@ -155,9 +155,7 @@ gulp.task('cleanDist', async function () {
         'dist/**',
         '!dist/img',
         '!dist/fonts',
-        '!dist/video',
-        'dist/svgSprite/sprite.svg',
-        '!dist/svgSprite'
+        '!dist/video'
     ]
     const deletedPaths = await del(notToDel);
     console.log('Deleted files and directories:\n', deletedPaths.join('\n'));

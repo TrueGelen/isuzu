@@ -99,6 +99,19 @@ body, div, h1, h2, h3, h4, p, input {
 		max-width: none;
 	}
 
+	.mainTitle{
+		font-family: Montserrat-Bold, sans-serif;
+		font-size: 28px;
+		color: #ff1313;
+		text-transform: uppercase;
+
+		@include to(1170px){
+			font-size: 24px;
+		}
+
+		@include xs(font-size, 4.5vw);
+	}
+
 	//---header----
 	.header{
     border: 1px solid yellow;
@@ -111,19 +124,22 @@ body, div, h1, h2, h3, h4, p, input {
     line-height: 1.15;
     padding-bottom: 50px;
 
+		//header__step_1
     @include to(1700px){
       background-position-y: -65px;
     }
 
+		//header__step_3
     @include to(1500px){
       background-position-y: -50px;
     }
 
+		//header__step_5
     @include to(1320px){
       padding-bottom: 50px;
     }
 
-    @include md(background-position-y, -40px)
+    @include md(background-position-y, -40px);
 
 		&__bg{
       position: absolute;
@@ -139,14 +155,17 @@ body, div, h1, h2, h3, h4, p, input {
       // width: 700px;
       width: 40.45%;
 
+			//header__step_5
       @include to(1320px){
         transform: translateY(1.5%) scale(1.1);
       }
 
+			//header__step_6
       @include to(1200px){
         transform: translateY(1.5%) scale(1);
       }
 
+			//header__step_7
       @include to(1023px){
         transform: translateY(2%) scale(1.1);
       }
@@ -161,7 +180,8 @@ body, div, h1, h2, h3, h4, p, input {
       display: flex;
       justify-content: space-evenly;
       margin-top: 3.7vw;
-
+			
+			//header__step_2
       @include to(1320px){
         margin-top: 2vw;
       }
@@ -186,18 +206,22 @@ body, div, h1, h2, h3, h4, p, input {
       color: white;
       margin-top: 50px;
 
+			//header__step_2
       @include to(1625px){
         margin-top: 30px;
       }
 
+			//header__step_4
       @include to(1420px){
         font-size: 18px;
       }
 
+			//header__step_5
       @include to(1320px){
         font-size: 1.4vw;
       }
-
+			
+			//header__step_6
       @include to(1200px){
         margin-top: 15px;
       }
@@ -205,20 +229,262 @@ body, div, h1, h2, h3, h4, p, input {
 
     &__nectarinLogo{
       width: 175px;
-      margin-top: 50px;
-      
+			margin-top: 50px;
+			
+      //header__step_2
       @include to(1625px){
         margin-top: 30px;
       }
-
+			//header__step_2
       @include to(1625px){
         width: 150px;
       }
 
+			//header__step_6
       @include to(1200px){
         margin-top: 15px;
       }
     }
+	}
+
+	//----audience
+	.audience{
+		// border: 1px solid blue;
+		position: relative;
+		background-color: white;
+		line-height: 1.15;
+		padding: 100px 0;
+
+		@include sm(padding, 40px 0 0 0);
+		
+		&__content{
+			// border: 1px solid red;
+			display: flex;
+			justify-content: space-between;
+
+			@include lg-block{
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			// @include xs(width, 100%);
+		}
+
+		&__part{
+			// border: 1px solid orange;
+			display: flex;
+			width: 40%;			
+
+			@include to(1500px){
+				width: 43%;
+			}
+
+			@include to(1400px){
+				width: 45%;
+			}
+
+			@include to(1230px){
+				width: 48%;
+			}
+
+			@include lg-block{
+				width: 100%;
+				max-width: 500px;
+				align-items: center;
+				margin: 20px 0;
+			}
+		}
+
+		&__img{
+			// border: 1px solid yellow;
+			max-width: 140px;
+
+			@include xs-block{
+				max-width: 35%;
+				// width: 35%;
+			}
+
+			&_speaker{
+				align-self: center;
+			}
+
+			&_man{
+				align-self: flex-end;
+			}			
+		}
+
+		&__textBlock{
+			margin-left: 20px;
+
+			@include xxs(margin-left, 10px);
+		}
+
+		&__p{
+			font-family: Montserrat-Medium, sans-serif;
+			font: 16px;
+			line-height: 1.3;
+			margin-top: 15px;
+
+			@include to(1170px){
+				font-size: 14px;
+			}
+
+			@include xs-block{
+				font-size: 3vw;
+			}
+
+			@include xxs(margin-top, 10px);
+		}
+	}
+
+	//----decision
+	.decision{
+		// border: 1px solid blue;
+		position: relative;
+		background-color: white;
+		background: url(../img/dicesion__bg.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		// background-position-y: 80px;
+		line-height: 1.15;
+		padding: 120px 0 50px 0;
+
+		@include sm-block{
+			background-position-x: 40%;
+		}
+
+		&__leftTriangle{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 30%;
+			min-width: 366px;
+
+			@include to(1420px){
+				width: 35%;
+			}
+
+			@include sm-block{
+				min-width: auto;
+				width: 340px;
+			}
+		}
+
+		&__content{
+			// border: 1px solid black;
+			width: 700px;
+			margin: 0 auto;
+
+			@include to(1420px){
+				transform: translate(-100px);
+			}
+
+			@include to(1230px){
+				transform: translate(0px);
+				margin: 0;
+				width: 70%;
+			}
+
+			@include md(width, 65%);
+
+			@include sm-block{
+				margin-top: 50px;
+			}
+
+			@include to(720px){
+				margin-top: 80px;
+			}
+
+			@include to(660px){
+				margin-top: 110px;
+				width: 80%;
+			}
+
+			@include xs-block{
+				margin-top: 125px;
+				width: 85%;
+			}
+
+			@include to(470px){
+				margin-top: 180px;
+				width: 100%;
+			}
+
+			@include to(400px){
+				margin-top: 210px;
+			}
+		}
+
+		&__p{
+			font-family: Montserrat-Medium, sans-serif;
+			font-size: 16px;
+			margin-top: 20px;
+			color: black;
+			line-height: 1.3;
+
+			@include lg-block{
+				margin-top: 15px;
+				font-size: 14px;
+			}
+
+			@include md(font-size, 13px);
+			@include xs(font-size, 12px);
+
+			@include to(400px){
+				font-size: 3vw;
+			}
+
+			&_bottom{
+				margin-top: 0px !important;
+				margin-left: 15px;
+
+				@include sm(width, 88%);
+			}
+		}
+
+		&__title{
+			margin-top: 60px;
+
+			@include lg(margin-top, 30px);
+		}
+
+		&__bottom{
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			margin-top: 20px;
+
+			@include sm(flex-wrap, wrap);
+		}
+
+		&__bottomPart{
+			display: flex;
+			align-items: center;
+			width: 65%;
+
+			@include sm-block{
+				width: 100%;
+				justify-content: space-between;
+			};
+			
+			&_first{
+				width: 35%;
+				
+				@include sm(margin-bottom, 15px);
+			}
+		}
+
+		&__icon{
+			max-width: 50px;
+
+			@include sm(width, 30px);
+
+			&_v{
+				max-width: 65px;
+
+				@include sm(width, 35px);
+			}
+		}
 	}
 
 	//-----slider----
@@ -227,26 +493,55 @@ body, div, h1, h2, h3, h4, p, input {
 		background-color: white;
 		line-height: 1.15;
 
-		padding: 80px 0;
-		@include sm(padding, 60px 0);
-		@include xs(padding, 40px 0 0 0);
+		padding: 80px 0 0 0;
+		@include sm(padding, 40px 0 0 0);
+
+		&__title{
+			text-align: center;
+		}
+
+		&__subtitle{
+			font-family: Montserrat-Medium, sans-serif;
+			font-size: 16px;
+			text-align: center;
+			margin-top: 10px;
+
+			@include xs(font-size, 14px);
+		}
 
 		&__wrapperSwiper{
 			// border: 1px solid red;
+			position: relative;
 			width: 100%;
 			text-align: center;
-			overflow: hidden;
+			// overflow-x: hidden;
+			margin-top: 40px;
+
+			@include xs(margin-top, 20px);
 		}
 
 		&__swiper-container{
+			// border: 1px solid yellow;
 			position: relative;
 			overflow: hidden;
 			width: 600px;
 			cursor: pointer;
+			padding-bottom: 20px;
 			margin: 0 auto 0 auto;
 
 			@include to(1150px){
 				width: 70%;
+			}
+
+			@include xs(width, 90%);
+			@include xxs(width, 100%);
+
+			& > .swiper-pagination{
+				bottom: 0px;
+
+				& > .swiper-pagination-bullet-active{
+					background: #ff1313;
+				}
 			}
 		}
 
@@ -255,39 +550,108 @@ body, div, h1, h2, h3, h4, p, input {
 		}
 
 		&__sliderButtons{
+			// border: 1px solid green;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 100%;
-			max-width: 900px;
+			max-width: 700px;
 			display: flex;
 			justify-content: space-between;
+
+			@include to(1023px){
+				max-width: none;
+				width: 80%;
+			}
+
+			@include xs(display, none);
 		}
 
 		&__chevron{
-			width: 100px;
-			cursor: pointer;
+			// border: 1px solid black;
+			width: 45px;
+			height: 45px;
+			fill: #d8d8d8;
+			transition: .3s;
 
-			&:hover{
-				transform: scale(1.2);
-			}
-
-			&:active{
-				transform: scale(1);
-			}
-
-			@include xs-block{
-				width: 15%;
-				cursor: default;
+			@include from(1025px){
+				cursor: pointer;
 
 				&:hover{
-					transform: scale(1);
+					fill: #e22525ab;
+				}
+	
+				&:active{
+					fill: #d8d8d8;
+				}
+			}
+
+			@include sm-block{
+				width: 30px;
+				height: 30px;
+			}
+
+			@include to(1024px){
+				&:hover{
+					fill: #d8d8d8;
 				}
 
 				&:active{
-					transform: scale(0.8);
+					fill: #e22525ab;
 				}
+			}
+
+			&_left{
+				transform: scale(-1,1);
+			}
+		}
+	}
+
+	//----conclusions
+	.conclusions{
+		position: relative;
+		background-color: white;
+		// background-position-y: 80px;
+		line-height: 1.15;
+		padding: 80px 0 0px 0;
+
+		@include sm(padding, 40px 0 0 0);
+
+		&__title{
+			text-align: center;
+		}
+
+		&__content{
+			width: 100%;
+			max-width: 800px;
+			margin: 0 auto;
+
+			@include to(1023px){
+				width: 85%;
+			}
+
+			@include xs(width, 100%);
+		}
+
+		&__p{
+			font-family: Montserrat-Medium, sans-serif;
+			font-size: 16px;
+			margin-top: 20px;
+			color: black;
+			line-height: 1.4;
+			text-align: justify;
+
+			@include lg-block{
+				margin-top: 15px;
+				font-size: 14px;
+			}
+
+			@include md(font-size, 13px);
+			@include xs(font-size, 12px);
+
+			@include to(400px){
+				font-size: 3vw;
 			}
 		}
 	}
@@ -360,7 +724,7 @@ body, div, h1, h2, h3, h4, p, input {
 			color: black;
 			font-size: 24px;
 			margin-top: 10px;
-
+			
 			@include to(1200px){
 				font-size: 1.8vw;
 			}
@@ -396,4 +760,11 @@ body, div, h1, h2, h3, h4, p, input {
 		}
 	}
 }
+
+
+
+
+
+
+
 
