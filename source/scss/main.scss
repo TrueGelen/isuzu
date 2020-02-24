@@ -655,49 +655,58 @@ body, div, h1, h2, h3, h4, p, input {
 
 	//---footer---
 	.footer{
+		border: 1px solid red;
 		position: relative;
-		padding: 50px 0 120px 0;
-		overflow: hidden;
+		background-color: black;
+		padding: 100px 0 0 0;
+		// overflow: hidden;
 		line-height: 1.15;
 
-		@include xs(padding, 40px 0 100px 0);
-
-		&__bg{
+		&__signboard{
 			position: absolute;
-			left: 0;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 100%;
+			left: 50%;
+			top: -3px;
+			transform: translateX(-50%);
+			width: 300px;
+		}
 
-			@include xs-block{
-				top: 0;
-				transform: translateY(0%);
-				width: auto;
-				height: 100%;
-			};
+		&__redLayout{
+			
+		}
+
+		&__title{
+			position: absolute;
+			left: 50%;
+			top: 25%;
+			transform: translateX(-50%);
+			font-family: Montserrat-Medium, sans-serif;
+			white-space: nowrap;
+			font-size: 22px;
+			color: white;
 		}
 
 		&__members{
 			position: relative;
 			@include row-flex();
-			// justify-content: space-between;
 			justify-content: space-around;
-			// margin-top: 9.8vw;
+			flex-wrap: nowrap;
 
-			/* @include from(1925px){
-				margin-top: 165px;
-			} */
+			@include md(flex-wrap, wrap);			
+		}
 
-			@include sm-block{
-				// justify-content: space-around;
-			}
+		&__whiteLine{
+			// border: 1ox solid blue;
+			background-color: white;
+			width: 100%;
+			height: 50px;
 		}
 	}
 
 	.member{
 		@include col();
-		@include size(3);
-		@include size-xs(5);
+		@include size(2.3);
+		@include size-md(4);
+		@include size-xs(6);
 
 		text-align: center;
 		margin: 30px 0px;
@@ -712,56 +721,25 @@ body, div, h1, h2, h3, h4, p, input {
 		}
 
 		&__photo{
-			width: 100%;
-			max-width: 230px;
+			width: 110px;
 		}
 
 		&__name{
-			font-family: Montserrat-Bold, sans-serif;
-			color: black;
-			font-size: 24px;
+			font-family: Montserrat-Medium, sans-serif;
+			color: white;
+			font-size: 12px;
 			margin-top: 10px;
-			
-			@include to(1200px){
-				font-size: 1.8vw;
-			}
-
-			@include sm-block{
-				font-size: 2vw;
-			}
-
-			@include to(680px){
-				font-size: 2.3vw;
-			}
-
-			@include xs(font-size, 3.5vw);
-			@include xxs(font-size, 4vw);
+			max-width: 150px;
+			margin: 10px auto 0 auto;
 		}
 
 		&__position{
-			font-family: Montserrat-Regular, sans-serif;
-			font-size: 18px;
+			font-family: Montserrat-Thin, sans-serif;
+			font-size: 11px;
 			margin-top: 8px;
-			color: #808087;
-
-			@include to(1200px){
-				font-size: 1.5vw;
-			}
-
-			@include to(680px){
-				font-size: 1.8vw;
-			}
-			
-			@include xs(font-size, 2.5vw);
-			@include xxs(font-size, 3vw);
+			color: rgb(231, 224, 224);
+			max-width: 150px;
+			margin: 8px auto 0 auto;
 		}
 	}
 }
-
-
-
-
-
-
-
-
