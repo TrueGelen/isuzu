@@ -141,6 +141,17 @@ body, div, h1, h2, h3, h4, p, input {
 
     @include md(background-position-y, -40px);
 
+    @include sm-block{
+      height: 270px;
+      padding: 30px 0 0 0;
+      // background-position-x: 10px;
+      background-position-y: 0px;
+    }
+
+    @include to(500px){
+      background-position-x: -70px;
+    }
+
 		&__bg{
       position: absolute;
       left: 0;
@@ -169,19 +180,37 @@ body, div, h1, h2, h3, h4, p, input {
       @include to(1023px){
         transform: translateY(2%) scale(1.1);
       }
+
+      @include sm-block{
+        width: 350px;
+        transform: translate(-20%, 0%);
+      }
+
+      @include xs-block{
+        width: 320px;
+        transform: translate(-20%, 5%);
+      }
+
+      @include to(500px){
+        display: none;
+      }
     }
 
     &__content{
-      position: relative;
       // border: 1px solid white;
-      // max-width: 1220px;
+      position: relative;      
       width: 100%;
       margin: 0 auto;
       display: flex;
       justify-content: space-evenly;
-      // margin-top: 3.7vw;
-			
-			
+
+      @include to(600px){
+        transform: translateX(-5%);
+      }
+
+      @include to(500px){
+        transform: translateX(0%);
+      }
     }
     
     &__right{
@@ -189,11 +218,24 @@ body, div, h1, h2, h3, h4, p, input {
       position: relative;
       display: inline-block;
       text-align: center;
+
+      @include to(600px){
+        // width: 250px;
+        transform: translateX(-5%);
+      }
+
+      @include to(500px){
+        transform: translateX(0);
+      }
     }
 
     &__isuzuLogo{
       // width: 360px;
       width: 84.2%;
+
+      @include sm-block{
+        width: 230px;
+      }
     }
 
     &__title{
@@ -222,6 +264,11 @@ body, div, h1, h2, h3, h4, p, input {
       @include to(1200px){
         margin-top: 15px;
       }
+      
+      @include sm-block{
+        font-size: 11px;
+        white-space: nowrap;
+      }
     }
 
     &__nectarinLogo{
@@ -241,6 +288,8 @@ body, div, h1, h2, h3, h4, p, input {
       @include to(1200px){
         margin-top: 15px;
       }
+
+      @include sm(width, 120px)
     }
 	}
 
@@ -651,7 +700,203 @@ body, div, h1, h2, h3, h4, p, input {
 				font-size: 3vw;
 			}
 		}
-	}
+  }
+  
+  //----comments----
+  .comments{
+    position: relative;
+		background-color: white;
+		// background-position-y: 80px;
+		line-height: 1.15;
+    padding: 80px 0 80px 0;
+
+    @include sm(padding, 40px 0);
+
+    &__title{
+      text-align: center;
+    }
+    
+    &__content{
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    &__comment{
+      // border: 1px solid red;
+      position: relative;
+      width: 100%;
+
+      &:nth-child(2){
+        margin-top: 40px;
+      }
+    }
+
+    &__photo{
+      position: absolute;      
+      max-width: 250px;
+      z-index: 2;
+
+      &_1{
+        right: 8%;
+        top: 10px;
+
+        @include to(1660px){
+          right: 5vw;
+        }
+  
+        @include to(1545px){
+          right: 3vw;
+        }
+  
+        @include to(1475px){
+          right: 2vw;
+        }
+  
+        @include to(1425px){
+          right: -1vw;
+        }
+  
+        @include to(1365px){
+          right: 0;
+          top: 60px;
+          width: 15vw;
+        }
+  
+        @include to(1260px){
+          top: 90px;
+          right: 0vw;
+          width: 12vw;
+        }
+      }
+
+      &_2{
+        top: 370px;
+        left: 8%;
+
+        @include to(1660px){
+          left: 5vw;
+        }
+  
+         @include to(1545px){
+          left: 2.6vw;
+        }
+  
+        @include to(1475px){
+          left: 1vw;
+        }
+  
+        @include to(1425px){
+          left: -1vw;
+        }
+  
+        @include to(1365px){
+          left: 0;
+          top: 405px;
+          width: 15vw;
+        }
+  
+        @include to(1260px){
+          top: 450px;
+          right: 2vw;
+          width: 12vw;
+        }
+      }
+
+      @include to(1160px){
+        display: none;
+      }
+    }
+
+    &__subtitle{
+      font-family: Montserrat-Medium, sans-serif;
+      font-size: 16px;
+      text-align: center;
+      color: black;
+      margin-top: 10px;
+    }
+
+    &__comBlock{
+      // border: 1px solid blue;
+      position: relative;
+      width: 100%;
+    }
+
+    &__wrap{
+      // border: 1px solid orange;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      max-width: 710px;
+      transform: translate(-50%, -35%);
+      z-index: 3;
+      // margin: 0 auto;
+
+      @include md(width, 95%);
+      @include to(570px){
+        position: relative;
+        transform: translate(0, 0);
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    &__border{
+      width: 100%;
+
+      @include to(570px){
+        display: none;
+      }
+
+      &_2{
+        @include from(1500px){
+          max-height: 330px;
+        }        
+      }
+    }
+
+    &__quote{
+      width: 50px;
+      float: left;
+      margin-right: 10px;
+
+      @include lg(width, 50px);
+    }
+
+    &__text{
+      // border: 1px solid red;
+      font-family: Montserrat-Medium;
+      color: black;
+      font-size: 16px;
+      text-align: justify;
+      
+      @include lg-block{
+				margin-top: 15px;
+        font-size: 14px;
+        transform: translateY(-5px);
+			}
+
+			@include md(font-size, 13px);
+			@include xs(font-size, 12px);
+
+			@include to(400px){
+				font-size: 3vw;
+			}
+    }
+
+    &__author{
+      // border: 1px solid blue;
+      font-family: Montserrat-Medium, sans-serif;
+      font-style: italic;
+      font-size: 12px;
+      text-align: right;
+      margin-top: 15px;
+    }
+  }
 
 	//---footer---
 	.footer{
